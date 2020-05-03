@@ -24,6 +24,9 @@ int main()
     int count8 = 0;
     int count9 = 0;
 
+    //Nicht verwertbare Zahlen
+    int nichtVerwertbar = 0;
+
     //aktuelle Zufallszahl
     int zahl = 0;
     for(int i = 0; i<=durchgaenge; i++)
@@ -39,6 +42,7 @@ int main()
         while(zahl>=10){
             zahl = zahl %10;
         }
+        
         
         //Einordnung und Auswerten der Aiffer
         switch(zahl){
@@ -79,10 +83,14 @@ int main()
             break;
             
             default:
+                nichtVerwertbar++;
                 continue;
             break;
         }
     }
+
+    //Nicht verwertbare Zahlen werden Abgezogen
+    durchgaenge = durchgaenge - nichtVerwertbar;
     
     //Ergebnisausgabe und Prozentberechnung
     printf("\nVon %d starteten %d mit 1 (%.2f%%)\n", durchgaenge, count1, (100.0 / (float)durchgaenge) * (float)count1);
@@ -95,7 +103,9 @@ int main()
     printf("Von %d starteten %d mit 8 (%.2f%%)\n", durchgaenge, count8, (100.0 / (float)durchgaenge) * (float)count8);
     printf("Von %d starteten %d mit 9 (%.2f%%)\n", durchgaenge, count9, (100.0 / (float)durchgaenge) * (float)count9);
 
-    printf("\n ======>PROGRAMM BEENDET. \n Druecken Sie ENTER.<======\n");
+    printf("Von %d waren %d Nicht verwertbar (%.2f%%)\n", durchgaenge, nichtVerwertbar, (100.0 / (float)durchgaenge) * (float)nichtVerwertbar);
+
+    printf("\n ======>PROGRAMM BEENDET<======\n \n Druecken Sie ENTER");
     getchar();
 
     return 0;

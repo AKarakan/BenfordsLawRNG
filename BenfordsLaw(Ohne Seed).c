@@ -90,6 +90,7 @@ int main()
     }
 
     //Nicht verwertbare Zahlen werden Abgezogen
+    int neuDurchgang = durchgaenge;
     durchgaenge = durchgaenge - nichtVerwertbar;
     
     //Ergebnisausgabe und Prozentberechnung
@@ -103,7 +104,7 @@ int main()
     printf("Von %d starteten %d mit 8 (%.2f%%)\n", durchgaenge, count8, (100.0 / (float)durchgaenge) * (float)count8);
     printf("Von %d starteten %d mit 9 (%.2f%%)\n", durchgaenge, count9, (100.0 / (float)durchgaenge) * (float)count9);
 
-    printf("Von %d waren %d Nicht verwertbar (%.2f%%)\n", durchgaenge, nichtVerwertbar, (100.0 / (float)durchgaenge) * (float)nichtVerwertbar);
+    printf("\nVon %d waren %d nicht verwertbar (%.2f%%)\n", neuDurchgang, nichtVerwertbar, (100.0 / (float)neuDurchgang) * (float)nichtVerwertbar);
 
     printf("\n ======>PROGRAMM BEENDET<======\n \n Druecken Sie ENTER");
     getchar();

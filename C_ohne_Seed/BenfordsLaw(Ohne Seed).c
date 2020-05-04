@@ -6,9 +6,14 @@ Erzeuge 1.000.000 Zahlen ohne Seed
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 int main()
 {
+
+    //Startzeit (rein aus Interesse wird die Laufzeit gemessen)
+    clock_t start = clock();
+
     //anzahl der Durchgänge --- spätere version einfügbar 
     int durchgaenge = 1000000;
     printf("Benfofrds Law Test mit %d an Zahlen ohne Seed.\n", durchgaenge);
@@ -84,7 +89,6 @@ int main()
             
             default:
                 nichtVerwertbar++;
-                continue;
             break;
         }
     }
@@ -105,6 +109,12 @@ int main()
     printf("Von %d starteten %d mit 9 (%.2f%%)\n", durchgaenge, count9, (100.0 / (float)durchgaenge) * (float)count9);
 
     printf("\nVon %d waren %d nicht verwertbar (%.2f%%)\n", neuDurchgang, nichtVerwertbar, (100.0 / (float)neuDurchgang) * (float)nichtVerwertbar);
+
+    //Endzeit (rein aus Interesse wird die Laufzeit gemessen)
+    clock_t ende = clock();
+    double laufzeit = (double)(ende - start) / CLOCKS_PER_SEC;
+
+    printf("\nDieses Programm lief %.2f Sekunden.\n",laufzeit);
 
     printf("\n ======>PROGRAMM BEENDET<======\n \n Druecken Sie ENTER");
     getchar();

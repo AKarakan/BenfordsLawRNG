@@ -47,7 +47,7 @@ int main()
         zahl = rand();
 
         //Reduktion auf die Anfangsziffer
-        while(zahl>=10){
+        while(zahl>10){
             zahl = zahl %10;
         }
         

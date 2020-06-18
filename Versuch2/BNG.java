@@ -42,7 +42,7 @@ public class BNG {
 				benno(anzahl);
 
 				if (anzeigen == 'j') {
-					// anzeigen alle zufallszahlen (gerade: aus)
+					// anzeigen aller zufallszahlen
 					for (int i = 0; i < akzeptierteZahlenInt.size(); i++) {
 						System.out.println(akzeptierteZahlenInt.get(i));
 					}
@@ -133,7 +133,7 @@ public class BNG {
 			Random rng = new Random();
 
 			//berechnung der benfordschen zahl
-			double erg = rng.nextDouble() / rng.nextDouble();;
+			double erg = rng.nextDouble() / rng.nextDouble();
 
 			//Formatierung auf x.xxx
 			while (erg < 1.0) {

@@ -89,7 +89,7 @@ public class BNG {
 		Random rng = new Random(System.currentTimeMillis());
 
 		// So lange die gewünschte anzahl noch nicht erreicht ist
-		while (akzeptierteZahlenInt.size() <= anzahl) {
+		while (akzeptierteZahlenInt.size() < anzahl) {
 
 			// neue Zufallszahl
 			int rngZahl = rng.nextInt();
